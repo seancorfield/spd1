@@ -13,6 +13,17 @@
 (def LOB1 [])
 (def LOB2 (list B1 B2 B3))
 
+(comment
+  "PROBLEM:
+
+  The linear length of a bag is defined to be it length plus
+  width plus height. Design the function linear-length-lob that consumes
+  a list of bags and produces a list of the linear lengths of each of
+  the bags in the list.
+
+  Use at least one built-in abstract function and encapsulate any helper
+  functions in a local expression.")
+
 #_(defn linear-length-lob
   "(listof Bag) -> (listof Number)
    produce a list of the linear length of all the bags in the given list"
