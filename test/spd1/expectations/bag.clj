@@ -7,5 +7,3 @@
               (+ (:l B2) (:w B2) (:h B2))
               (+ (:l B3) (:w B3) (:h B3)))
         (linear-length-lob (list B1 B2 B3)))
-
-(expectations/run-all-tests)
