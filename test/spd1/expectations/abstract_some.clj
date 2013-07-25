@@ -9,3 +9,11 @@
 (expect true (some-pred? even? (list 1 5 2 7)))
 (expect true (some-pred? odd? (list 1 5 2 7)))
 (expect false (some-pred? odd? (list 2 4 6)))
+
+(expect false (some-positive? []))
+(expect true (some-positive? (list 2 -3 -4)))
+(expect false (some-positive? (list -2 -3 -4)))
+
+(expect false (some-negative? []))
+(expect true (some-negative? (list 2 3 -4)))
+(expect false (some-negative? (list 2 3 4)))

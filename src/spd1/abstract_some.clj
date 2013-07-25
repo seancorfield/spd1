@@ -25,6 +25,9 @@
     (or (pred (first lon))
         (some-pred? pred (rest lon)))))
 
+(comment
+  "PART B: Rewrite the original functions")
+
 ;; Clojure doesn't have postive? / negative? primitives so let's define those:
 (defn positive?
   "Number -> Boolean
@@ -36,3 +39,15 @@
    produce true if the given number is negative (less than zero)."
   [n]
   (> 0 n))
+
+(defn some-positive?
+  "ListOfNumber -> Boolean
+   produce true if some number in lon is positive"
+  [lon]
+  (some-pred? positive? lon))
+
+(defn some-negative?
+  "ListOfNumber -> Boolean
+   produce true if some numner in lon is negative"
+  [lon]
+  (some-pred? negative? lon))
