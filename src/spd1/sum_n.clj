@@ -1,4 +1,4 @@
-(ns spd1.sum-n-solution)
+(ns spd1.sum-n)
 
 #_(defn sum-n-odds
   "Natural -> Natural
