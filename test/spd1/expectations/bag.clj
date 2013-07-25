@@ -1,7 +1,6 @@
 (ns spd1.expectations.bag
   (:require [spd1.bag :refer :all]
-            [expectations :refer [expect]]
-            :reload-all))
+            [expectations :refer [expect]]))
 
 (expect (list (+ (:l B1) (:w B1) (:h B1))
               (+ (:l B2) (:w B2) (:h B2))
