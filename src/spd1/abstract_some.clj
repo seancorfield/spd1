@@ -1,4 +1,5 @@
-(ns spd1.abstract-some)
+(ns spd1.abstract-some
+  (:require [expectations :refer [expect]]))
 
 (comment
   "PROBLEM:
@@ -9,6 +10,18 @@
 
 (comment
   "PART A: Design an abstract function")
+
+;; declare function ahead of examples
+(declare some-pred?)
+
+;; examples
+(expect false (some-pred? positive? []))
+(expect true (some-pred? positive? (list 1 4 -1 3)))
+(expect false (some-pred? positive? (list -1 -5)))
+(expect true (some-pred? negative? (list 2 -1)))
+(expect true (some-pred? even? (list 1 5 2 7)))
+(expect true (some-pred? odd? (list 1 5 2 7)))
+(expect false (some-pred? odd? (list 2 4 6)))
 
 #_(defn some-pred?
   "(X -> Boolean) (listof X) -> Boolean
@@ -28,17 +41,16 @@
 (comment
   "PART B: Rewrite the original functions")
 
-;; Clojure doesn't have postive? / negative? primitives so let's define those:
-(defn positive?
-  "Number -> Boolean
-   produce true if the given number is positive (greater than zero)."
-  [n]
-  (< 0 n))
-(defn negative?
-  "Number -> Boolean
-   produce true if the given number is negative (less than zero)."
-  [n]
-  (> 0 n))
+;; declare function ahead of examples
+(declare some-positive?)
+
+;; examples
+(expect false (some-positive? []))
+(expect true (some-positive? (list 2 -3 -4)))
+(expect false (some-positive? (list -2 -3 -4)))
+
+;; declare positive? so we can define it later (Clojure doesn't have this primitive)
+(declare positive?)
 
 (defn some-positive?
   "ListOfNumber -> Boolean
@@ -46,8 +58,35 @@
   [lon]
   (some-pred? positive? lon))
 
+;; declare function ahead of examples
+(declare some-negative?)
+
+;; examples
+(expect false (some-negative? []))
+(expect true (some-negative? (list 2 3 -4)))
+(expect false (some-negative? (list 2 3 4)))
+
+;; declare negative? so we can define it later (Clojure doesn't have this primitive)
+(declare negative?)
+
 (defn some-negative?
   "ListOfNumber -> Boolean
    produce true if some numner in lon is negative"
   [lon]
   (some-pred? negative? lon))
+
+;; missing "primitives"
+(defn positive?
+  "Number -> Boolean
+   produce true if the given number is positive (greater than zero)."
+  [n]
+  (< 0 n))
+
+(defn negative?
+  "Number -> Boolean
+   produce true if the given number is negative (less than zero)."
+  [n]
+  (> 0 n))
+
+;; automatically run the tests
+(expectations/run-tests [*ns*])
