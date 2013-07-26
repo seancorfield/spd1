@@ -1,6 +1,7 @@
 # spd1
 
-Clojure versions of solutions from Introduction to Systematic Program Design Part 1 course from UBC.
+Clojure versions of solutions from Coursera's [Introduction to Systematic Program Design Part 1](https://class.coursera.org/programdesign-001/class/index)
+course from UBC.
 
 ## Usage
 
