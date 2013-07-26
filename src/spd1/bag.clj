@@ -1,4 +1,5 @@
-(ns spd1.bag)
+(ns spd1.bag
+  (:require [expectations :refer [expect]]))
 
 (defrecord Bag [l w h])
 ;; Bag is (->Bag Number Number Number)
@@ -24,6 +25,15 @@
   Use at least one built-in abstract function and encapsulate any helper
   functions in a local expression.")
 
+;; declare function ahead of examples
+(declare linear-length-lob)
+
+;; examples
+(expect (list (+ (:l B1) (:w B1) (:h B1))
+              (+ (:l B2) (:w B2) (:h B2))
+              (+ (:l B3) (:w B3) (:h B3)))
+        (linear-length-lob (list B1 B2 B3)))
+
 #_(defn linear-length-lob
   "(listof Bag) -> (listof Number)
    produce a list of the linear length of all the bags in the given list"
@@ -37,3 +47,6 @@
   (letfn [(linear-length [b]
                          (+ (:l b) (:w b) (:h b)))]
     (map linear-length lob)))
+
+(expectations/run-tests [*ns*])
+
