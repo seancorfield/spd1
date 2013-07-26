@@ -75,6 +75,9 @@ When you evaluate the whole file in LightTable, you'll see a pass/fail report ap
 You'll also see a message in the console (the collapsed panel at the bottom of the LightTable workspace), that says how many tests were run,
 how many assertions they contained, how long it took, and how many failures and errors there were. Hopefully zero.
 
+Note that you would remove these lines in production code since you would not want each file to automatically run its tests and then remove all the symbols you just defined!
+These two lines are here simply to make it easy to work with source + tests mixed together in a single file with LightTable.
+
 In addition, scattered throughout the files, you'll see *forward declarations* of functions. Unlike BSL/Racket, Clojure requires that all symbols are
 known in advance of their first use. In BSL/Racket, you can refer to a function but define it further on in the file. In Clojure, you must either
 `declare` or `defn` your functions before you use them.
