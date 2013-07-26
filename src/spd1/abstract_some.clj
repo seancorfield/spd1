@@ -14,6 +14,10 @@
 ;; declare function ahead of examples
 (declare some-pred?)
 
+;; declare positive? and negative? so we can define them later (Clojure doesn't have these primitives)
+(declare positive?)
+(declare negative?)
+
 ;; examples
 (expect false (some-pred? positive? []))
 (expect true (some-pred? positive? (list 1 4 -1 3)))
@@ -49,9 +53,6 @@
 (expect true (some-positive? (list 2 -3 -4)))
 (expect false (some-positive? (list -2 -3 -4)))
 
-;; declare positive? so we can define it later (Clojure doesn't have this primitive)
-(declare positive?)
-
 (defn some-positive?
   "ListOfNumber -> Boolean
    produce true if some number in lon is positive"
@@ -65,9 +66,6 @@
 (expect false (some-negative? []))
 (expect true (some-negative? (list 2 3 -4)))
 (expect false (some-negative? (list 2 3 4)))
-
-;; declare negative? so we can define it later (Clojure doesn't have this primitive)
-(declare negative?)
 
 (defn some-negative?
   "ListOfNumber -> Boolean
