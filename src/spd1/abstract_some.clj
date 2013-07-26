@@ -1,5 +1,5 @@
 (ns spd1.abstract-some
-  (:require [expectations :refer [expect]]
+  (:require [expectations :refer [expect run-tests]]
             [expectations.workaround :refer [clear-tests]]))
 
 (clear-tests [*ns*])
@@ -90,4 +90,4 @@
   (> 0 n))
 
 ;; automatically run the tests
-(expectations/run-tests [*ns*])
+(run-tests [*ns*])

@@ -1,5 +1,5 @@
 (ns spd1.bag
-  (:require [expectations :refer [expect]]
+  (:require [expectations :refer [expect run-tests]]
             [expectations.workaround :refer [clear-tests]]))
 
 (clear-tests [*ns*])
@@ -51,5 +51,5 @@
                          (+ (:l b) (:w b) (:h b)))]
     (map linear-length lob)))
 
-(expectations/run-tests [*ns*])
+(run-tests [*ns*])
 

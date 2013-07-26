@@ -1,5 +1,5 @@
 (ns spd1.demolish
-  (:require [expectations :refer [expect given]]
+  (:require [expectations :refer [expect given run-tests]]
             [expectations.workaround :refer [clear-tests]]))
 
 (clear-tests [*ns*])
@@ -66,4 +66,4 @@
   (= :old bs))
 
 ;; make the tests run automatically
-(expectations/run-tests [*ns*])
+(run-tests [*ns*])

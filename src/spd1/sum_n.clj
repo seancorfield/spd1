@@ -1,5 +1,5 @@
 (ns spd1.sum-n
-  (:require [expectations :refer [expect]]
+  (:require [expectations :refer [expect run-tests]]
             [expectations.workaround :refer [clear-tests]]))
 
 (clear-tests [*ns*])
@@ -24,4 +24,4 @@
   (reduce + 0 (filter odd? (range (* 2 n)))))
 
 ;; automatically run tests
-(expectations/run-tests [*ns*])
+(run-tests [*ns*])
