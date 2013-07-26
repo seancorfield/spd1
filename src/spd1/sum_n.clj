@@ -1,5 +1,8 @@
 (ns spd1.sum-n
-  (:require [expectations :refer [expect]]))
+  (:require [expectations :refer [expect]]
+            [expectations.workaround :refer [clear-tests]]))
+
+(clear-tests [*ns*])
 
 ;; declare function ahead of examples
 (declare sum-n-odds)

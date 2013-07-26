@@ -1,5 +1,8 @@
 (ns spd1.demolish
-  (:require [expectations :refer [expect given]]))
+  (:require [expectations :refer [expect given]]
+            [expectations.workaround :refer [clear-tests]]))
+
+(clear-tests [*ns*])
 
 ;; Data Definitions
 

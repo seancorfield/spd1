@@ -1,5 +1,8 @@
 (ns spd1.bag
-  (:require [expectations :refer [expect]]))
+  (:require [expectations :refer [expect]]
+            [expectations.workaround :refer [clear-tests]]))
+
+(clear-tests [*ns*])
 
 (defrecord Bag [l w h])
 ;; Bag is (->Bag Number Number Number)
