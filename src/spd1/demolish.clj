@@ -1,4 +1,5 @@
-(ns spd1.demolish)
+(ns spd1.demolish
+  (:require [expectations :refer [expect given]]))
 
 ;; Data Definitions
 
@@ -27,6 +28,20 @@
   The city wants to demolish all buildings classified as "old". You are hired to design a function called
   demolish? that determines whether a building should be torn down or not.")
 
+;; note we must declare the function being tested ahead of the examples
+(declare demolish?)
+
+;; basic examples / tests
+(expect false (demolish? :new))
+(expect true  (demolish? :old))
+(expect false (demolish? :heritage))
+
+;; an alternative form of the above tests
+(given [result age] (expect result (demolish? age))
+       false :new
+       true  :old
+       false :heritage)
+
 #_(defn demolish?
   "BuildingStatus -> Boolean
    produce true if the building is 'old' and should be demolished."
@@ -46,3 +61,6 @@
    produce true if the building is 'old' and should be demolished."
   [bs]
   (= :old bs))
+
+;; make the tests run automatically
+(expectations/run-tests [*ns*])
