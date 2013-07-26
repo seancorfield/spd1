@@ -41,6 +41,40 @@
 ;; of course the idiomatic solution here would be reduce/map
 (defn abstract-sum [f lox] (reduce + (map f lox)))
 
+(comment
+  "PROBLEM B:
+
+  Now re-define the original functions to use the new abstract function.
+
+  Remember, the signature and tests should not change from the original
+  functions.")
+
+;; declare function ahead of examples
+(declare sum-of-squares)
+
+;; examples
+(expect 0 (sum-of-squares []))
+(expect (+ 4 16) (sum-of-squares (list 2 4)))
+
+(defn sum-of-squares
+  "(listof Number) -> Number
+  produce the sum of the squares of the numbers in lon"
+  [lon]
+  (abstract-sum sqr lon))
+
+;; declare function ahead of examples
+(declare sum-of-lengths)
+
+;; examples
+(expect 0 (sum-of-lengths []))
+(expect 3 (sum-of-lengths (list "a" "bc")))
+
+(defn sum-of-lengths
+  "(listof String) -> Number
+  produce the sum of the lengths of the strings in los"
+  [los]
+  (abstract-sum string-length los))
+
 ;; define those primitives
 (defn- string-length [s] (.length s))
 (defn- sqr [n] (* n n))
