@@ -51,6 +51,7 @@
   [bs]
   false) ; stub
 
+;; following the template directly
 #_(defn demolish?
   "BuildingStatus -> Boolean
    produce true if the building is 'old' and should be demolished."
@@ -59,6 +60,7 @@
         (= :old bs) true
         (= :heritage) false))
 
+;; simplifying the structure
 (defn demolish?
   "BuildingStatus -> Boolean
    produce true if the building is 'old' and should be demolished."
