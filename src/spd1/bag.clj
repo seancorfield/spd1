@@ -4,12 +4,21 @@
 
 (clear-tests [*ns*])
 
+;; it's important to note that the most idiomatic way to represent
+;; a struct in Clojure is just a plain ol' map rather than a defrecord
+;; but this more closely matches the define-struct in BSL/Racket
+;; in Clojure you would normally only use defrecord if you needed to
+;; also work with protocols and/or needed high-performance maps...
+
 (defrecord Bag [l w h])
 ;; Bag is (->Bag Number Number Number)
 ;; interp. a bag with a length, width, and height in centimeters
 (def B1 (->Bag 19.5 10.0 6.5))
 (def B2 (->Bag 23.0 11.5 7.0))
 (def B3 (->Bag 18.0 9.5 5.5))
+;; for a plain ol' map, we'd define a bag like this
+(def B4 {:l 17.1 :w 8.2 :h 9.3})
+;; the rest of this file would be unchanged - only construction changes
 
 ;; ListOfBag is one of:
 ;; - empty []
