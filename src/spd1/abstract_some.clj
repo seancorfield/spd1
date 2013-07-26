@@ -1,8 +1,5 @@
 (ns spd1.abstract-some
-  (:require [expectations :refer [expect run-tests]]
-            [expectations.workaround :refer [clear-tests]]))
-
-(clear-tests [*ns*])
+  (:require [expectations :refer [expect run-tests]]))
 
 (comment
   "PROBLEM:
@@ -91,3 +88,4 @@
 
 ;; automatically run the tests
 (run-tests [*ns*])
+(remove-ns (symbol (str *ns*)))

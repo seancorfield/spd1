@@ -1,8 +1,5 @@
 (ns spd1.bag
-  (:require [expectations :refer [expect run-tests]]
-            [expectations.workaround :refer [clear-tests]]))
-
-(clear-tests [*ns*])
+  (:require [expectations :refer [expect run-tests]]))
 
 ;; it's important to note that the most idiomatic way to represent
 ;; a struct in Clojure is just a plain ol' map rather than a defrecord
@@ -61,4 +58,4 @@
     (map linear-length lob)))
 
 (run-tests [*ns*])
-
+(remove-ns (symbol (str *ns*)))

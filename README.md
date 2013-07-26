@@ -61,22 +61,17 @@ In addition, that namespace declaration will contain a `:require` clause that sp
 here, that means we always have:
 
     (ns spd1.sum-n
-      (:require [expectations :refer [expect]]
-                [expectations.workaround :refer [clear-tests]]))
+      (:require [expectations :refer [expect run-tests]]))
 
-This says we're going to use `expect` from the `expectations` namespace - an external library specified in `project.clj` - as well as the `clear-tests`
-function from the `expectations.workaround` namepace which is part of this project.
-
-Next up we have a function call that clears out any previously loaded tests (examples) in the current namespace (`*ns*`):
-
-    (clear-tests [*ns*])
+This says we're going to use `expect` and `run-tests` from the `expectations` namespace - an external library specified in `project.clj`.
 
 After that we'll have the regular body of the file - Constants, Data Definitions, Functions, etc - just as you'd expect from the BSL examples in the course.
-Then at the bottom we have some magic that causes the examples in the file to run:
+Then at the bottom we have some magic that causes the examples in the file to run and clears out the definitions for the next run:
 
-    (expectations/run-tests [*ns*])
+    (run-tests [*ns*])
+    (remove-ns (symbol (str *ns*)))
 
-When you evaluate the whole file in LightTable, you'll see a pass/fail report appear inline next to this function call.
+When you evaluate the whole file in LightTable, you'll see a pass/fail report appear inline next to the `run-tests` function call.
 You'll also see a message in the console (the collapsed panel at the bottom of the LightTable workspace), that says how many tests were run,
 how many assertions they contained, how long it took, and how many failures and errors there were. Hopefully zero.
 

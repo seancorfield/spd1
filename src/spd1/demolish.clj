@@ -1,8 +1,5 @@
 (ns spd1.demolish
-  (:require [expectations :refer [expect given run-tests]]
-            [expectations.workaround :refer [clear-tests]]))
-
-(clear-tests [*ns*])
+  (:require [expectations :refer [expect given run-tests]]))
 
 ;; Data Definitions
 
@@ -69,3 +66,4 @@
 
 ;; make the tests run automatically
 (run-tests [*ns*])
+(remove-ns (symbol (str *ns*)))

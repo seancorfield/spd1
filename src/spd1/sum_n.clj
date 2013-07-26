@@ -1,8 +1,5 @@
 (ns spd1.sum-n
-  (:require [expectations :refer [expect run-tests]]
-            [expectations.workaround :refer [clear-tests]]))
-
-(clear-tests [*ns*])
+  (:require [expectations :refer [expect run-tests]]))
 
 (comment
   "PROBLEM:
@@ -54,3 +51,4 @@
 
 ;; automatically run tests
 (run-tests [*ns*])
+(remove-ns (symbol (str *ns*)))

@@ -1,8 +1,5 @@
 (ns spd1.find-person
-  (:require [expectations :refer [expect run-tests]]
-            [expectations.workaround :refer [clear-tests]]))
-
-(clear-tests [*ns*])
+  (:require [expectations :refer [expect run-tests]]))
 
 (comment
   "The following program implements an arbitrary-arity descendant family
@@ -89,3 +86,4 @@
 
 ;; automcatically run tests
 (run-tests [*ns*])
+(remove-ns (symbol (str *ns*)))
