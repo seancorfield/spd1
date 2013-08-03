@@ -26,6 +26,8 @@
 
 
 (declare summon)
+
+;; tests
 (expect "summon Firebolt!"          (summon "Firebolt"))
 (expect (str "summon " "portkey!")  (summon "portkey"))
 (expect (str "summon " "broom" "!") (summon "broom"))
@@ -43,4 +45,4 @@
 
 ;; automcatically run tests
 (run-tests [*ns*])
-(Remove-ns (symbol (str *ns*)))
+(remove-ns (symbol (str *ns*)))

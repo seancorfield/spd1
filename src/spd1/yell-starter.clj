@@ -2,7 +2,7 @@
  (:require [expectations :refer [expect run-tests]]))
 
 ;; yell-starter.clj
-;; Week 2 - Lecture 2c
+;; Week 2 - Lecture 2c and  W2P4
 
 (comment
   "PROBLEM:
@@ -12,25 +12,24 @@
 
    Remember, when we say DESIGN, we mean follow the recipe.
 
-   Leave behind commented out versions of the stub and template.")
+   Leave behind commented out versions of the stub and template."
 
-(ns spd1.find-person
-  (:require [expectations :refer [expect run-tests]]))
-
+   "BSL: (string-append ..) => Clojure: (str ...)")
 
 
-;; String -> String
-;; Produces a String appended with ! given a String
-(declare yell)
+
+(declare yell) ;; forward declaration
+
+;; tests
 (expect "dog!" (yell "dog"))
 (expect "cat!!" (yell "cat!")) ; I'm really afraid of cats
 
-;(defn yell [st] "") ;; Stub
+;(defn yell [st] "")  ;Stub
 
-;;(defn yell [st]     ;; Template
+;;(defn yell [st]     ;Template
 ;;  (... st ... "!"))
 
-(defn yell [st]   ;; Function
+(defn yell [st]       ;Function
   "String -> String
    Produces a String appended with ! given a String"
   (str st "!"))

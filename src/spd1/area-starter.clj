@@ -1,6 +1,9 @@
 (ns spd1.area-starter
   (:require [expectations :refer [expect run-tests]]))
 
+;; area-starter.clj
+;; week2 - lecture 2d
+
 (comment
   "PROBLEM:
 
@@ -9,21 +12,22 @@
 
    Remember, when we say DESIGN, we mean follow the recipe.
 
-   Leave behind commented out versions of the stub and template.")
+   Leave behind commented out versions of the stub and template."
+
+   "Clojure: no built in square function(?)")
 
 
-;; Number -> Number
-;; produces the area of a square given the length of the side
-(declare area)
+(declare area) ;
+
 (expect (* 3 3)     (area 3))
 (expect (* 3.2 3.2) (area 3.2))
 
-;(defn area [len] 0) ; stub
+;(defn area [len] 0) ;stub
 
-;;(defn area [len]  ; template
-;;  (... len))
+;(defn area [len]    ;template
+;  (... len))
 
-(defn area [len]   ; actual function
+(defn area [len]     ;function
   (* len len))
 
 
