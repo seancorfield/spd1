@@ -66,4 +66,3 @@
 
 ;; make the tests run automatically
 (run-tests [*ns*])
-(remove-ns (symbol (str *ns*)))

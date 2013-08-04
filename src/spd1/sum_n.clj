@@ -51,4 +51,3 @@
 
 ;; automatically run tests
 (run-tests [*ns*])
-(remove-ns (symbol (str *ns*)))
