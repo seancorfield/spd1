@@ -66,17 +66,16 @@ here, that means we always have:
 This says we're going to use `expect` and `run-tests` from the `expectations` namespace - an external library specified in `project.clj`.
 
 After that we'll have the regular body of the file - Constants, Data Definitions, Functions, etc - just as you'd expect from the BSL examples in the course.
-Then at the bottom we have some magic that causes the examples in the file to run and clears out the definitions for the next run:
+Then at the bottom we have some magic that causes the examples in the file to run:
 
     (run-tests [*ns*])
-    (remove-ns (symbol (str *ns*)))
 
 When you evaluate the whole file in LightTable, you'll see a pass/fail report appear inline next to the `run-tests` function call.
 You'll also see a message in the console (the collapsed panel at the bottom of the LightTable workspace), that says how many tests were run,
 how many assertions they contained, how long it took, and how many failures and errors there were. Hopefully zero.
 
-Note that you would remove these lines in production code since you would not want each file to automatically run its tests and then remove all the symbols you just defined!
-These two lines are here simply to make it easy to work with source + tests mixed together in a single file with LightTable.
+Note that you would remove that line in production code since you would not want each file to automatically run its tests!
+That line is here simply to make it easy to work with source + tests mixed together in a single file with LightTable.
 
 In addition, scattered throughout the files, you'll see *forward declarations* of functions. Unlike BSL/Racket, Clojure requires that all symbols are
 known in advance of their first use. In BSL/Racket, you can refer to a function but define it further on in the file. In Clojure, you must either
@@ -89,13 +88,13 @@ specify any external dependencies you need in your project. The `defproject` con
 (don't worry about that) and a number of attributes, specified by keywords - symbols beginning with `:` - that cover descriptive and functional
 aspects of your project. If you get into Clojure development, you'll need to learn about `:dependencies`, `:plugins`, `:profiles` and a few more.
 
-For this project, only `:dependencies` is relevant: we depend on Clojure 1.5.1 and Expectations 1.4.49. When Leiningen - or LightTable - starts a REPL,
+For this project, only `:dependencies` is relevant: we depend on Clojure 1.5.1 and Expectations 1.4.52. When Leiningen - or LightTable - starts a REPL,
 it will automatically download those dependencies and cache them (in `.m2/` in your home directory, if you care) and add those JAR files to the Java
 classpath before starting the REPL (which is really just a Java program). That makes the namespaces inside those JAR files available to your code,
 and that's how the `:require` declaration in each namspace pulls them in and makes functions available to your code.
 
 ## License
 
-Copyright © 2013 Sean Corfield
+Copyright (c) 2013 Sean Corfield
 
 Distributed under the Eclipse Public License, the same as Clojure.
