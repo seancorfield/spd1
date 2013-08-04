@@ -7,7 +7,7 @@
 (comment
   "PROBLEM:
 
-   DESIGN a function called area that consumes the length of one side 
+   DESIGN a function called area that consumes the length of one side
    of a square and produces the area of the square.
 
    Remember, when we say DESIGN, we mean follow the recipe.
@@ -30,8 +30,5 @@
 (defn area [len]     ;function
   (* len len))
 
-
-
 ;; automcatically run tests
 (run-tests [*ns*])
-(remove-ns (symbol (str *ns*)))

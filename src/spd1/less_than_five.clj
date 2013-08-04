@@ -7,12 +7,12 @@
 (comment
   "PROBLEM:
 
-   DESIGN function that consumes a string 
+   DESIGN function that consumes a string
    and determines whether its length is less than 5.
 
    Remember, when we say DESIGN, we mean follow the recipe.
 
-   Your complete design should include signature, purpose, 
+   Your complete design should include signature, purpose,
    commented out stub, examples/tests, commented out template,
    and the completed function definition."
 
@@ -42,4 +42,3 @@
 
 ;; Automcatically run tests
 (run-tests [*ns*])
-(remove-ns (symbol (str *ns*)))

@@ -7,7 +7,7 @@
 (comment
   "PROBLEM:
 
-   DESIGN a function called yell that consumes strings like 'hello' 
+   DESIGN a function called yell that consumes strings like 'hello'
    and adds '!' to produce strings like 'hello!'.
 
    Remember, when we say DESIGN, we mean follow the recipe.
@@ -38,4 +38,3 @@
 
 ;; automcatically run tests
 (run-tests [*ns*])
-(remove-ns (symbol (str *ns*)))

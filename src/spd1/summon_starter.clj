@@ -17,7 +17,7 @@
 
   Remember, when we say DESIGN, we mean follow the recipe.
 
-  Your complete design should include signature, purpose, 
+  Your complete design should include signature, purpose,
   commented out stub, examples/tests, commented out template,
   and the completed function definition."
 
@@ -45,4 +45,3 @@
 
 ;; automcatically run tests
 (run-tests [*ns*])
-(remove-ns (symbol (str *ns*)))

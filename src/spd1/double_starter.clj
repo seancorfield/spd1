@@ -7,10 +7,10 @@
 (comment
   "PROBLEM:
 
-  Design a function that consumes a number and produces twice that number. 
-  Call your function double. Follow the HtDF recipe and show the stub and 
+  Design a function that consumes a number and produces twice that number.
+  Call your function double. Follow the HtDF recipe and show the stub and
   template."
-  
+
   "BSL: (double ...) is a predefined function, use (double-fn ...)")
 
 
@@ -33,4 +33,3 @@
 
 ;; automcatically run tests
 (run-tests [*ns*])
-(remove-ns (symbol (str *ns*)))
